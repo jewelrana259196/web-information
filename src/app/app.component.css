@@ -1,0 +1,29 @@
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+  }
+  
+  main {
+    padding: 20px;
+  }
+  
+  section {
+    margin-bottom: 80px;
+    padding: 40px 20px;
+    background-color: #f8f9fa;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  }
+  
+  @media (max-width: 768px) {
+    main {
+      padding: 10px;
+    }
+  
+    section {
+      margin-bottom: 60px;
+      padding: 20px 10px;
+    }
+  }
+  
