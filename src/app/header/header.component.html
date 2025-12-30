@@ -1,18 +1,17 @@
 <header class="header">
-    <div class="logo">Jewel Rana</div>
-  
-    <button class="menu-btn" (click)="toggleMenu()">
-      ☰
-    </button>
-  
-    <nav [class.open]="menuOpen">
-      <a href="#home" [class.active]="activeSection === 'home'" (click)="closeMenu()">Home</a>
-      <a href="#about" [class.active]="activeSection === 'about'" (click)="closeMenu()">About</a>
-      <a href="#skills" [class.active]="activeSection === 'skills'" (click)="closeMenu()">Skills</a>
-      <a href="#projects" [class.active]="activeSection === 'projects'" (click)="closeMenu()">Projects</a>
-      <a href="#experience" [class.active]="activeSection === 'experience'" (click)="closeMenu()">Experience</a>
-      <a href="#education" [class.active]="activeSection === 'education'" (click)="closeMenu()">Education</a>
-      <a href="#contact" [class.active]="activeSection === 'contact'" (click)="closeMenu()">Contact</a>
-    </nav>
-  </header>
-  
+  <div class="logo">Jewel Rana</div>
+
+  <button class="menu-btn" (click)="toggleMenu()">
+    ☰
+  </button>
+
+  <nav [class.open]="menuOpen">
+    <a href="#home" [class.active]="activeSection === 'home'" (click)="closeMenu()"><b>Home</b></a>
+    <a href="#about" [class.active]="activeSection === 'about'" (click)="closeMenu()"><b>About</b></a>
+    <a href="#skills" [class.active]="activeSection === 'skills'" (click)="closeMenu()"><b>Skills</b></a>
+    <a href="#projects" [class.active]="activeSection === 'projects'" (click)="closeMenu()"><b>Projects</b></a>
+    <a href="#experience" [class.active]="activeSection === 'experience'" (click)="closeMenu()"><b>Experience</b></a>
+    <a href="#education" [class.active]="activeSection === 'education'" (click)="closeMenu()"><b>Education</b></a>
+    <a href="#contact" [class.active]="activeSection === 'contact'" (click)="closeMenu()"><b>Contact</b></a>
+  </nav>
+</header>

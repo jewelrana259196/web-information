@@ -1,2 +1,31 @@
-<h2>About Me</h2>
-<p>Hi! I'm Rana, a passionate web developer with expertise in Angular, TypeScript, and modern frontend technologies.</p>
+<div class="container py-5">
+    <div class="row justify-content-center" *ngIf="showContent">
+        <div class="col-lg-10" appScrollAnimation="animate-fade-left">
+            <h2 class="text-center text-primary mb-4 fw-bold" appScrollAnimation="animate-fade-right">About Me</h2>
+
+            <p class="lead mb-4 text-justify" appScrollAnimation="animate-fade-right" delay="delay-100">
+                I am a Full Stack Developer currently working at Softcafe IT Solution with expertise in Angular, Java,
+                and
+                Spring Boot.
+            </p>
+
+            <div class="mb-4" appScrollAnimation="animate-fade-right" delay="delay-200">
+                <p>
+                    <span class="fw-bold">Career Objective:</span>
+                    To build a long-term career in IT with opportunities for career growth. To enhance my educational
+                    and
+                    professional skills in a stable and dynamic workplace.
+                </p>
+            </div>
+
+            <div class="education-section" appScrollAnimation="animate-fade-right" delay="delay-300">
+                <p class="mb-2">Education</p>
+                <ul class="list-unstyled">
+                    <li class="mb-1">BSc in Applied Mathematics, University of Rajshahi (CGPA: 2.65/4)</li>
+                    <li class="mb-1">HSC, Science, Banshbaria Degree College (CGPA: 4.4/5)</li>
+                    <li>SSC, Science, Banshbaria High School (CGPA: 5/5)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
