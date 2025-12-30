@@ -1,10 +1,12 @@
 <div class="container py-5">
-    <div class="row justify-content-center" *ngIf="showContent">
+    @if(showContent){
+    <div class="row justify-content-center">
         <div class="col-lg-10" appScrollAnimation="animate-fade-left">
             <h2 class="text-center text-primary mb-4 fw-bold" appScrollAnimation="animate-fade-right">About Me</h2>
 
             <p class="lead mb-4 text-justify" appScrollAnimation="animate-fade-right" delay="delay-100">
-                I am a Full Stack Developer currently working at Softcafe IT Solution with expertise in Angular, Java,
+                I am a Full Stack Developer currently working at Softcafe IT Solution LTD with expertise in Angular,
+                Java,
                 and
                 Spring Boot.
             </p>
@@ -21,11 +23,15 @@
             <div class="education-section" appScrollAnimation="animate-fade-right" delay="delay-300">
                 <p class="mb-2">Education</p>
                 <ul class="list-unstyled">
-                    <li class="mb-1">BSc in Applied Mathematics, University of Rajshahi (CGPA: 2.65/4)</li>
-                    <li class="mb-1">HSC, Science, Banshbaria Degree College (CGPA: 4.4/5)</li>
-                    <li>SSC, Science, Banshbaria High School (CGPA: 5/5)</li>
+                    <li class="mb-1">PGDIT in Post Graduate Diploma in Information Technology, Jahangirnagar University
+                        (CGPA: 3.00/4)</li>
+                    <li class="mb-1">MBA in Master of Business Administration, National University (CGPA: 2.50/4)</li>
+                    <li class="mb-1">BBA in Bachelor of Business Administration, National University (CGPA: 2.62/4)</li>
+                    <li class="mb-1">HSC, Science, Palashbari govt college,polashbari gaibandha (CGPA: 3.10/5)</li>
+                    <li>SSC, Science, Bishobari Bl High School (CGPA: 3.31/5)</li>
                 </ul>
             </div>
         </div>
     </div>
+    }
 </div>

@@ -17,7 +17,7 @@ import { EducationComponent } from './education/education.component';
     ProjectsComponent,
     SkillsComponent,
     ContactComponent,
-    FooterComponent, HomeComponent, ExperienceComponent, EducationComponent],
+    FooterComponent, ExperienceComponent, EducationComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

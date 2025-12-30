@@ -27,8 +27,16 @@ export class ScrollAnimationDirective implements OnInit {
                     }
                     // Remove opacity override to let animation control it
                     this.renderer.removeStyle(this.el.nativeElement, 'opacity');
-
-                    observer.unobserve(this.el.nativeElement);
+                } else {
+                    // Reset animation state when out of view
+                    if (this.appScrollAnimation) {
+                        this.renderer.removeClass(this.el.nativeElement, this.appScrollAnimation);
+                    }
+                    if (this.delay) {
+                        this.renderer.removeClass(this.el.nativeElement, this.delay);
+                    }
+                    // Hide element again
+                    this.renderer.setStyle(this.el.nativeElement, 'opacity', '0');
                 }
             });
         }, {

@@ -1,5 +1,6 @@
 <div class="home-container bg-light d-flex justify-content-center">
-    <div class="container-fluid px-5" *ngIf="showContent">
+    @if(showContent){
+    <div class="container-fluid px-5">
         <div class="row align-items-center justify-content-center g-5">
             <!-- Image Section -->
             <div class="col-md-5 text-center" appScrollAnimation="animate-fade-left">
@@ -35,4 +36,5 @@
             </div>
         </div>
     </div>
+    }
 </div>
