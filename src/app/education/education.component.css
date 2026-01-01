@@ -1,0 +1,270 @@
+.education-section {
+    background-color: #ffffff;
+    /* Clean white like screenshot */
+    overflow-x: hidden;
+}
+
+/* Header Icons */
+.header-icon-wrapper {
+    width: 60px;
+    height: 60px;
+    background: #2563eb;
+    /* Solid blue */
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    color: white;
+    font-size: 36px;
+}
+
+.header-icon-wrapper-orange {
+    width: 60px;
+    height: 60px;
+    background: #ff5722;
+    /* Orange */
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(255, 87, 34, 0.3);
+}
+
+.header-icon {
+    font-size: 1.75rem;
+    color: white;
+}
+
+.section-title {
+    font-weight: 600;
+    color: #0f172a;
+    margin-top: -0.10rem;
+    font-size: 3rem;
+    font-family: bold;
+}
+
+.section-title2 {
+    font-weight: 600;
+    color: #0f172a;
+    margin-top: -0.10rem;
+    font-size: 2rem;
+    font-family: bold;
+}
+
+/* Timeline */
+.timeline-line {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 100%;
+    background-color: #e2e8f0;
+    /* Light gray line */
+    z-index: 0;
+}
+
+.timeline-item {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 4rem;
+    min-height: 140px;
+}
+
+.timeline-dot-wrapper {
+    position: absolute;
+    left: 50%;
+    top: 30px;
+    /* Align dot closer to top of card */
+    transform: translate(-50%, 0);
+    z-index: 2;
+    background: #ffffff;
+    padding: 5px;
+}
+
+.timeline-dot {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 3px solid white;
+    box-shadow: 0 0 0 4px #f1f5f9;
+    /* Outer ring */
+}
+
+/* Specific Dot Colors */
+.bg-blue {
+    background-color: #3b82f6 !important;
+}
+
+.bg-green {
+    background-color: #22c55e !important;
+}
+
+.bg-purple {
+    background-color: #a855f7 !important;
+}
+
+.education-card {
+    position: relative;
+    border-radius: 16px;
+    padding: 1.5rem;
+    /* border: 1px solid #e2e8f0; */
+    /* Subtle border */
+}
+
+/* Theme Backgrounds */
+.theme-blue {
+    background-color: #eff6ff;
+    border: 1px solid #dbeafe !important;
+}
+
+.theme-green {
+    background-color: #f0fdf4;
+    border: 1px solid #dcfce7 !important;
+}
+
+.theme-purple {
+    background-color: #faf5ff;
+    border: 1px solid #f3e8ff !important;
+}
+
+.degree-title {
+    font-weight: 800;
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: #0f172a;
+}
+
+.major-text {
+    font-weight: 500;
+    color: #64748b;
+    font-size: 1rem;
+}
+
+.institute-badge {
+    color: #475569;
+    font-weight: 500;
+    font-size: 0.95rem;
+    background: white;
+    padding: 5px 12px;
+    border-radius: 8px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* Date Pills - The Gradient Bars */
+.date-pill {
+    padding: 0.6rem 2rem;
+    border-radius: 12px;
+    /* Less rounded, more like bar */
+    color: white;
+    font-weight: 700;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    display: inline-block;
+    min-width: 180px;
+    text-align: center;
+    position: relative;
+    /* top: 30px; */
+    /* Align with dot */
+}
+
+/* Gradient backgrounds for dates */
+.date-pill.bg-blue {
+    background: linear-gradient(90deg, #3b82f6, #2563eb);
+}
+
+.date-pill.bg-green {
+    background: linear-gradient(90deg, #22c55e, #16a34a);
+}
+
+.date-pill.bg-purple {
+    background: linear-gradient(90deg, #d946ef, #a855f7);
+}
+
+/* Badges/Tags */
+.badge-blue {
+    background-color: white;
+    color: #2563eb;
+    border: 1px solid #bfdbfe;
+}
+
+.badge-green {
+    background-color: white;
+    color: #16a34a;
+    border: 1px solid #bbf7d0;
+}
+
+.badge-purple {
+    background-color: white;
+    color: #9333ea;
+    border: 1px solid #e9d5ff;
+}
+
+/* Training */
+.training-card {
+    border-radius: 20px;
+    border: 1px solid #f1f5f9 !important;
+    background: white;
+}
+
+.icon-box {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.training-badge {
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.75rem;
+}
+
+.learning-badge {
+    background: #1e293b;
+    color: white;
+    padding: 10px 24px;
+    border-radius: 50px;
+    font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+
+    .timeline-line,
+    .timeline-dot-wrapper {
+        left: 20px;
+    }
+
+    .timeline-item {
+        flex-direction: column;
+        margin-bottom: 3rem;
+    }
+
+    .col-md-6 {
+        width: 100%;
+        padding-left: 50px !important;
+        text-align: left !important;
+        justify-content: flex-start !important;
+    }
+
+    .education-card {
+        margin: 0 !important;
+        width: 100%;
+    }
+
+    .date-pill-wrapper {
+        justify-content: flex-start !important;
+        margin-bottom: 1rem;
+        order: -1;
+        /* Date above card on mobile */
+    }
+
+    .me-md-5,
+    .ms-md-5 {
+        margin: 0 !important;
+    }
+}

@@ -1,1 +1,35 @@
-<p>experience works!</p>
+<section class="experience-section py-5">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="section-title">Professional Experience</h2>
+            <div class="title-underline"></div>
+        </div>
+
+        <div class="experience-container">
+            <div class="experience-card mb-4" *ngFor="let exp of experiences">
+                <div class="exp-header d-flex flex-wrap justify-content-between align-items-baseline mb-3">
+                    <h3 class="role-title mb-0">
+                        {{ exp.role }} <span class="at-symbol">&#64;</span> <span class="company-name">{{ exp.company
+                            }}</span>
+                    </h3>
+                    <span class="exp-date text-muted">{{ exp.date }}</span>
+                </div>
+
+                <div class="tags-container mb-4">
+                    <span class="badge me-2 mb-2" [ngClass]="tag.class" *ngFor="let tag of exp.tags">{{ tag.name
+                        }}</span>
+                </div>
+
+                <h5 class="fw-bold mb-3">Key Projects:</h5>
+                <div class="row">
+                    <div class="col-md-6 mb-2" *ngFor="let project of exp.projects">
+                        <div class="project-item d-flex align-items-center">
+                            <i class="bi bi-check-circle-fill text-primary me-2"></i>
+                            <span>{{ project }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

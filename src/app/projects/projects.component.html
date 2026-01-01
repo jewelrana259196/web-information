@@ -1,7 +1,31 @@
-<h2>My Projects</h2>
-<ul>
-  <li><strong>Portfolio Website</strong> – My personal portfolio built with Angular.</li>
-  <li><strong>Weather App</strong> – Real-time weather data using OpenWeather API.</li>
-  <li><strong>Blog Platform</strong> – A simple blog system using Firebase.</li>
-</ul>
+<section class="projects-section py-5">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="section-title">Featured Projects</h2>
+      <div class="title-underline"></div>
+    </div>
 
+    <div class="row g-4">
+      <div class="col-md-4 d-flex" *ngFor="let project of projects">
+        <div class="card project-card h-100 border-0">
+          <div class="card-img-wrapper">
+            <img [src]="project.image" class="card-img-top" [alt]="project.title">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title fw-bold mb-3">{{ project.title }}</h5>
+            <p class="card-text text-muted flex-grow-1">{{ project.description }}</p>
+            <a [href]="project.link" class="show-more-link mb-3">Show more</a>
+
+            <div class="tags-container mb-4">
+              <span class="badge tag-badge me-2 mb-2" *ngFor="let tag of project.tags">{{ tag }}</span>
+            </div>
+
+            <a [href]="project.link" class="btn btn-github w-100 mt-auto">
+              <i class="bi bi-github me-2"></i>View on GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

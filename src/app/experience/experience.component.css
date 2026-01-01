@@ -1,0 +1,88 @@
+.experience-section {
+    background-color: #ffff;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #1e293b;
+    margin-bottom: 0.5rem;
+    text-decoration: underline;
+    text-decoration-color: #2563eb;
+    /* Blue underline like screenshot */
+    text-underline-offset: 8px;
+    text-decoration-thickness: 4px;
+}
+
+/* Remove gradient underline if purely matching screenshot, or keep for consistency. 
+   Screenshot uses a simple blue underline on text. */
+.title-underline {
+    display: none;
+}
+
+.experience-card {
+    background: white;
+    /* border-radius: 12px; */
+    /* box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); */
+    padding: 2rem;
+    /* border: 1px solid #e2e8f0; */
+}
+
+.role-title {
+    font-weight: 800;
+    font-size: 1.75rem;
+    color: #1e293b;
+}
+
+.at-symbol {
+    color: #3b82f6;
+    margin: 0 4px;
+}
+
+.company-name {
+    color: #3b82f6;
+}
+
+.exp-date {
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.tag-angular {
+    background-color: #dbeafe !important;
+    /* Blue-100 */
+    color: #1e40af !important;
+    /* Blue-800 */
+}
+
+.tag-java {
+    background-color: #dcfce7 !important;
+    /* Green-100 */
+    color: #166534 !important;
+    /* Green-800 */
+}
+
+.tag-spring {
+    background-color: #f3e8ff !important;
+    /* Purple-100 */
+    color: #6b21a8 !important;
+    /* Purple-800 */
+}
+
+.badge {
+    padding: 0.6em 1em;
+    font-size: 0.85rem;
+    border-radius: 6px;
+    font-weight: 600;
+}
+
+.project-item {
+    font-size: 1.05rem;
+    color: #374151;
+}
+
+.bi-check-circle-fill {
+    color: #3b82f6 !important;
+    /* Bright blue checkmark */
+    font-size: 1.2rem;
+}

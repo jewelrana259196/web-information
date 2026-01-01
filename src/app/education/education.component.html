@@ -1,1 +1,140 @@
-<p>education works!</p>
+<section class="education-section py-5">
+    <div class="text-center mb-5">
+        <div class="header-icon-wrapper mx-auto mb-3">
+            <i class="fa-solid fa-graduation-cap"></i>
+        </div>
+        <h1 class="section-title">Education & Training</h1>
+        <p class="text-dark text-decoration-underline">My academic journey and professional certifications that shaped
+            my
+            expertise</p>
+    </div>
+    <div class="container">
+        <!-- Header -->
+        <div class="text-center mb-5">
+            <div class="header-icon-wrapper mx-auto mb-3">
+                <i class="fa-solid fa-building-columns"></i>
+
+            </div>
+            <h2 class="section-title2">Academic Background</h2>
+            <p class="text-muted">The foundation of my knowledge and expertise</p>
+        </div>
+
+        <!-- Timeline -->
+        <div class="timeline position-relative mb-5">
+            <div class="timeline-line"></div>
+
+            <div class="timeline-item row" *ngFor="let edu of educationList; let i = index; let isEven = even">
+                <!-- Center Dot -->
+                <div class="timeline-dot-wrapper">
+                    <div class="timeline-dot" [ngClass]="'bg-' + edu.colorTheme"></div>
+                </div>
+
+                <!-- Left Side (Content for Even, Empty for Odd) -->
+                <div class="col-md-6 d-flex"
+                    [ngClass]="{'justify-content-end cmd-left': isEven, 'order-2 cmd-right': !isEven}">
+                    <div class="education-card card border-0 shadow-sm p-4 h-100"
+                        [ngClass]="['theme-' + edu.colorTheme, isEven ? 'me-md-5' : 'ms-md-5']" *ngIf="isEven">
+                        <h3 class="degree-title">{{ edu.degree }}</h3>
+                        <p class="major-text mb-2">{{ edu.major }}</p>
+                        <div class="institute-badge d-inline-flex align-items-center mb-3">
+                            <i class="bi bi-building me-2"></i> {{ edu.institute }}
+                        </div>
+                        <div class="tags-container mt-auto">
+                            <span class="badge rounded-pill me-1 mb-1" [ngClass]="'badge-' + edu.colorTheme"
+                                *ngFor="let tag of edu.tags">{{ tag }}</span>
+                        </div>
+                    </div>
+
+                    <!-- Date pill for Right side item (appears on left) -->
+                    <div class="date-pill-wrapper d-flex align-items-center justify-content-end w-100" *ngIf="!isEven">
+                        <div class="date-pill" [ngClass]="'bg-' + edu.colorTheme">
+                            <i class="bi bi-calendar3 me-2"></i> {{ edu.session }}
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Side (Date for Even, Content for Odd) -->
+                <div class="col-md-6 d-flex"
+                    [ngClass]="{'justify-content-start cmd-right': isEven, 'order-1 cmd-left': !isEven, 'justify-content-end': !isEven}">
+                    <!-- Date pill for Left side item (appears on right) -->
+                    <div class="date-pill-wrapper d-flex align-items-center" *ngIf="isEven">
+                        <div class="date-pill" [ngClass]="'bg-' + edu.colorTheme">
+                            <i class="bi bi-calendar3 me-2"></i> {{ edu.session }}
+                        </div>
+                    </div>
+
+                    <div class="education-card card border-0 shadow-sm p-4 w-100 h-100"
+                        [ngClass]="['theme-' + edu.colorTheme, !isEven ? 'me-md-5' : 'ms-md-5']" *ngIf="!isEven">
+                        <h3 class="degree-title">{{ edu.degree }}</h3>
+                        <p class="major-text mb-2">{{ edu.major }}</p>
+                        <div class="institute-badge d-inline-flex align-items-center mb-3">
+                            <i class="bi bi-building me-2"></i> {{ edu.institute }}
+                        </div>
+                        <div class="tags-container mt-auto">
+                            <span class="badge rounded-pill me-1 mb-1" [ngClass]="'badge-' + edu.colorTheme"
+                                *ngFor="let tag of edu.tags">{{ tag }}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tags Row below content (Optional placement, putting inside card is easier but screenshot shows below/merged) -->
+                <!-- Improving structure: Putting tags INSIDE the card for better mobile view, or separate row? 
+             Screenshot shows tags below the card. Let's append tags to the card container logic above if possible 
+             or just put them inside the card div for simplicity.
+        -->
+                <div class="col-md-6 mt-2"
+                    [ngClass]="{'offset-md-0': isEven, 'offset-md-6': !isEven, 'text-end': isEven, 'text-start': !isEven}">
+                    <!-- This layout is getting tricky with tags outside. Let's put tags INSIDE the card in CSS? 
+                  Actually screenshot shows tags hanging below the colored bar. 
+                  Simple approach: Put tags inside the education-card div but style distinctly.
+             -->
+                </div>
+            </div>
+
+            <!-- Correcting the Loop Logic for valid HTML structure and tags -->
+            <!-- Let's iterate again properly. The previous loop structure was splitting content/date. 
+           I need to make sure the Tags are visible. I will inject tags into the card div above.
+      -->
+        </div>
+
+        <!-- Retrying logic inside the loop above to include tags -->
+        <!-- I will overwrite the file content completely so I can fix the logic now. -->
+    </div>
+
+    <!-- Professional Training Section -->
+    <div class="container mt-5 pt-5">
+        <div class="text-center mb-5">
+            <div class="header-icon-wrapper-orange mx-auto mb-3">
+                <i class="bi bi-patch-check-fill header-icon"></i>
+            </div>
+            <h2 class="section-title">Professional Training</h2>
+            <p class="text-muted">Specialized certifications and technical expertise</p>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-4" *ngFor="let train of trainingList">
+                <div class="card h-100 border-0 shadow-sm training-card p-4">
+                    <div class="icon-box mb-3" [style.background-color]="train.iconBg" [style.color]="train.iconColor">
+                        <i [class]="'bi ' + train.icon"></i>
+                    </div>
+                    <h5 class="fw-bold mb-1">{{ train.title }}</h5>
+                    <small class="text-primary fw-bold mb-3 d-block"><i class="bi bi-bookmark-fill me-1"></i>{{
+                        train.provider }}</small>
+                    <p class="text-muted small mb-3">{{ train.description }}</p>
+                    <div class="tags-container">
+                        <span class="badge training-badge me-1 mb-1" *ngFor="let tag of train.tags"
+                            [style.background-color]="train.iconBg" [style.color]="train.iconColor">
+                            {{ tag }}
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-5">
+            <div class="learning-badge d-inline-flex align-items-center">
+                <i class="bi bi-trophy-fill text-warning me-2"></i> Continuously Learning & Growing
+            </div>
+        </div>
+    </div>
+</section>
