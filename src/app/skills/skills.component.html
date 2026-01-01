@@ -2,7 +2,8 @@
     <div class="container">
         <h2 class="section-title">Skills</h2>
         <div class="skills-grid">
-            <div class="skill-card" *ngFor="let skill of skills">
+            <div class="skill-card" *ngFor="let skill of skills; let i = index" appScrollAnimation="animate-stand-up"
+                [delay]="'delay-' + (((i % 5) + 1) * 100)">
                 <div class="icon-wrapper">
                     <img [src]="skill.icon" [alt]="skill.name" class="skill-icon">
                 </div>

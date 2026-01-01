@@ -49,24 +49,39 @@
     }
 }
 
+@keyframes standUp {
+    from {
+        opacity: 0;
+        transform: rotateX(-90deg);
+        transform-origin: bottom;
+    }
+
+    to {
+        opacity: 1;
+        transform: rotateX(0);
+        transform-origin: bottom;
+    }
+}
+
 .animate-fade-up {
     animation: fadeInUp 0.8s ease-out forwards;
-    opacity: 0;
 }
 
 .animate-fade-left {
     animation: fadeInLeft 0.8s ease-out forwards;
-    opacity: 0;
 }
 
 .animate-fade-right {
     animation: fadeInRight 0.8s ease-out forwards;
-    opacity: 0;
 }
 
 .animate-zoom-in {
     animation: zoomIn 0.8s ease-out forwards;
-    opacity: 0;
+}
+
+.animate-stand-up {
+    animation: standUp 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    /* Bouncy effect */
 }
 
 .delay-100 {
