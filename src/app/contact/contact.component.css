@@ -1,0 +1,42 @@
+:host {
+	display: block;
+}
+
+.contact-section {
+	background: #f8fafc;
+}
+
+.section-heading {
+	font-size: 1.75rem;
+	font-weight: 700;
+}
+.section-underline {
+	width: 80px;
+	height: 6px;
+	border-radius: 999px;
+	background: linear-gradient(90deg,#5865f2,#6b8cff);
+}
+
+.info-card { background: #fff; }
+.icon-box { width:44px; height:44px; display:flex;align-items:center;justify-content:center;border-radius:8px;color:#fff }
+.icon-box.email { background:#6b8cff }
+.icon-box.phone { background:#28a745 }
+.icon-box.location { background:#ff6b6b }
+.status-dot { width:10px;height:10px;border-radius:50%;display:inline-block }
+
+.contact-list-item i { font-size:1.05rem }
+
+.form-card { background: linear-gradient(135deg, rgba(88,101,242,0.08), rgba(107,140,255,0.06)); border:1px solid rgba(88,101,242,0.06) }
+.form-icon { width:64px;height:64px;border-radius:12px;background:linear-gradient(90deg,#5865f2,#6b8cff);display:inline-flex;align-items:center;justify-content:center;color:#fff;font-size:1.25rem }
+.muted { color:#6b7280 }
+
+.btn-send { background: #5865f2; color: #fff; border-radius: 8px; padding: 0.6rem 1.25rem; border: none }
+.btn-send:hover { opacity: 0.95 }
+
+.social-lg { display:inline-flex; gap:8px; align-items:center }
+
+/* Responsive tweaks */
+@media (max-width: 991px) {
+	.section-underline { margin: 0 auto }
+}
+
