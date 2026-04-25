@@ -1,0 +1,10 @@
+node_modules 
+.git 
+.vscode 
+.vercel 
+"**/0.pack" 
+"*.pack" 
+"**/esbuild.*" 
+"**/0.pack" 
+"*.pack" 
+"**/esbuild.*" 
