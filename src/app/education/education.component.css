@@ -1,0 +1,107 @@
+/* Section */
+.education-section {
+  background: #fff;
+  color: #0f172a;
+  overflow-x: hidden;
+}
+
+/* Header */
+.header-icon-wrapper {
+  width: 60px;
+  height: 60px;
+  background: #2563eb;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-size: 1.6rem;
+}
+
+.section-title { font: 700 2rem/1.2 sans-serif; }
+.section-subtitle { font: 700 1.2rem sans-serif; }
+.lead { color: #475569; }
+
+/* Timeline layout */
+.timeline {
+  position: relative;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  width: 4px;
+  height: 100%;
+  background: #131de4;
+  transform: translateX(-50%);
+}
+
+.timeline-item {
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem 0;
+}
+
+/* Left / Right */
+.timeline-item:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.timeline-content {
+  width: 45%;
+  padding: 1rem;
+  border-radius: 12px;
+  background: #f8fafc;
+}
+
+/* Dot */
+.timeline-dot {
+  width: 20px;
+  height: 20px;
+  background: #3b82f6;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  box-shadow: 0 0 0 4px #f1f5f9;
+  margin: auto;
+  z-index: 1;
+}
+
+/* Date pill */
+.date-pill {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 999px;
+  color: #fff;
+  font-weight: 600;
+  background: linear-gradient(90deg, #3b82f6, #2563eb);
+  margin-bottom: 10px;
+}
+
+/* Themes (reduce repetition) */
+.theme-blue { background: #eff6ff; }
+.theme-green { background: #f0fdf4; }
+.theme-purple { background: #faf5ff; }
+
+/* Badge */
+.badge {
+  font-size: 0.75rem;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid #ddd;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .timeline::before {
+    left: 20px;
+  }
+
+  .timeline-item {
+    flex-direction: column;
+    padding-left: 40px;
+  }
+
+  .timeline-content {
+    width: 100%;
+  }
+}
