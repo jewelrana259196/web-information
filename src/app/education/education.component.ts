@@ -36,6 +36,71 @@ export class EducationComponent {
     // Map to Bootstrap column classes
     return this.trainingCols === 2 ? 'col-md-6' : 'col-md-4';
   }
+
+  // Theme map used to render styles via [ngStyle] so we can remove component CSS
+  themeMap: Record<string, any> = {
+    blue: {
+      cardBg: '#eff6ff', cardBorder: '#dbeafe', dateGradient: 'linear-gradient(90deg,#3b82f6,#2563eb)', dotBg: '#3b82f6', badgeColor: '#2563eb', badgeBorder: '#bfdbfe'
+    },
+    teal: {
+      cardBg: '#ecfeff', cardBorder: '#bdf0ec', dateGradient: 'linear-gradient(90deg,#2dd4bf,#14b8a6)', dotBg: '#14b8a6', badgeColor: '#0d9488', badgeBorder: '#bdebea'
+    },
+    amber: {
+      cardBg: '#fff7ed', cardBorder: '#fde4bf', dateGradient: 'linear-gradient(90deg,#fbbf24,#f59e0b)', dotBg: '#f59e0b', badgeColor: '#b45309', badgeBorder: '#fde9c9'
+    },
+    green: {
+      cardBg: '#f0fdf4', cardBorder: '#dcfce7', dateGradient: 'linear-gradient(90deg,#22c55e,#16a34a)', dotBg: '#22c55e', badgeColor: '#16a34a', badgeBorder: '#bbf7d0'
+    },
+    purple: {
+      cardBg: '#faf5ff', cardBorder: '#f3e8ff', dateGradient: 'linear-gradient(90deg,#d946ef,#a855f7)', dotBg: '#a855f7', badgeColor: '#9333ea', badgeBorder: '#e9d5ff'
+    },
+    pink: {
+      cardBg: '#fff0f6', cardBorder: '#ffd7ec', dateGradient: 'linear-gradient(90deg,#fb7185,#ec4899)', dotBg: '#ec4899', badgeColor: '#db2777', badgeBorder: '#ffd6eb'
+    }
+  };
+
+  getThemeStyles(theme: string) {
+  const t = this.themeMap[theme || 'blue'] || this.themeMap['blue'];
+    return {
+      'background': t.cardBg,
+      'border': `1px solid ${t.cardBorder}`
+    };
+  }
+
+  getDatePillStyles(theme: string) {
+  const t = this.themeMap[theme || 'blue'] || this.themeMap['blue'];
+    return {
+      'background': t.dateGradient,
+      'color': '#fff',
+      'box-shadow': '0 18px 40px rgba(2,6,23,.08)'
+    };
+  }
+
+  getBadgeStyles(theme: string) {
+  const t = this.themeMap[theme || 'blue'] || this.themeMap['blue'];
+    return {
+      'background': '#fff',
+      'color': t.badgeColor,
+      'border': `1px solid ${t.badgeBorder}`,
+      'padding': '.25rem .6rem',
+      'border-radius': '999px',
+      'font-size': '.8rem',
+      'display': 'inline-block'
+    };
+  }
+
+  getDotStyle(theme: string) {
+  const t = this.themeMap[theme || 'blue'] || this.themeMap['blue'];
+    return {
+      'width': '25px',
+      'height': '25px',
+      'border-radius': '50%',
+      'border': '3px solid #f3f5f4',
+      'box-shadow': '0 0 0 4px #f4f6f7',
+      'margin-top': '75px',
+      'background': t.dotBg
+    };
+  }
   educationList: Education[] = [
     {
       degree: 'PGDIT in Post Graduate Diploma in Information Technology',

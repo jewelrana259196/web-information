@@ -21,9 +21,8 @@
                         <div class="timeline-row d-flex align-items-start w-100 gap-3 mb-3">
                             <!-- Left side (card or pill depending on index) -->
                             <div class="side side-left">
-                                <!-- force MBA item to right: if degree contains 'MBA' treat as odd -->
-                                <ng-container *ngIf="(i % 2 === 0) && !(edu.degree && edu.degree.toLowerCase().includes('mba'))">
-                                    <div class="timeline-content card shadow-sm p-4" [ngClass]="('theme-' + (edu.colorTheme || 'blue')).toLowerCase().trim()">
+                                <ng-container *ngIf="i % 2 === 0">
+                                    <div class="card shadow-sm p-4 timeline-content" [ngStyle]="getThemeStyles(edu.colorTheme)">
                                         <div class="d-flex align-items-start justify-content-between mb-2">
                                             <div>
                                                 <h3 class="degree-title mb-1">{{ edu.degree }} </h3>
@@ -33,15 +32,19 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="tags-container mt-3">
-                                            <span class="badge rounded-pill me-2 mb-1 tag-pill" [ngClass]="('badge-' + (edu.colorTheme || 'blue')).toLowerCase().trim()" *ngFor="let tag of edu.tags">{{ tag }}</span>
+                                         <div class="tags-container mt-3">
+                                            <span class="rounded-pill me-2 mb-1" *ngFor="let tag of edu.tags" [ngStyle]="getBadgeStyles(edu.colorTheme)">{{ tag }}</span>
                                         </div>
+                                        <!-- <div class="tags-container mt-3">
+                                            <span class="badge rounded-pill me-2 mb-1 tag-pill" [ngClass]="('badge-' + (edu.colorTheme || 'blue')).toLowerCase().trim()" *ngFor="let tag of edu.tags">{{ tag }}</span>
+                                        </div> -->
                                         
                                     </div>
+                                    
                                    
                                 </ng-container>
-                                <ng-container *ngIf="(i % 2 === 1) || (edu.degree && edu.degree.toLowerCase().includes('mba'))">
-                                    <div class="date-pill lang " [ngClass]="('bg-' + (edu.colorTheme || 'blue')).toLowerCase().trim()">
+                                <ng-container *ngIf="i % 2 === 1">
+                                    <div class="date-pill long" [ngStyle]="getDatePillStyles(edu.colorTheme)">
                                         <i class="bi bi-calendar3 me-2"></i> {{ edu.session }}
                                     </div>
                                 </ng-container>
@@ -50,13 +53,13 @@
                             <!-- Center: vertical line and dot -->
                             <div class="timeline-center d-flex flex-column align-items-center">
                                 <div class="timeline-line left"></div>
-                                <div class="timeline-dot" [ngClass]="('bg-' + (edu.colorTheme || 'blue')).toLowerCase().trim()" ></div>
+                                <div class="timeline-dot" [ngStyle]="getDotStyle(edu.colorTheme)"></div>
                             </div>
 
-                       
+                           
                             <div class="side side-right">
                                 <ng-container *ngIf="i % 2 === 1">
-                                    <div class="timeline-content card shadow-sm p-4" [ngClass]="('theme-' + (edu.colorTheme || 'blue')).toLowerCase().trim()">
+                                    <div class="card shadow-sm p-4 timeline-content" [ngStyle]="getThemeStyles(edu.colorTheme)">
                                         <div class="d-flex align-items-start justify-content-between mb-2">
                                             <div>
                                                 <h3 class="degree-title mb-1">{{ edu.degree }}</h3>
@@ -67,12 +70,12 @@
                                             </div>
                                         </div>
                                         <div class="tags-container mt-3">
-                                            <span class="badge rounded-pill me-2 mb-1 tag-pill" [ngClass]="('badge-' + (edu.colorTheme || 'blue')).toLowerCase().trim()" *ngFor="let tag of edu.tags">{{ tag }}</span>
+                                            <span class="rounded-pill me-2 mb-1" *ngFor="let tag of edu.tags" [ngStyle]="getBadgeStyles(edu.colorTheme)">{{ tag }}</span>
                                         </div>
                                     </div>
                                 </ng-container>
                                 <ng-container *ngIf="i % 2 === 0">
-                                    <div class="date-pill long" [ngClass]="('bg-' + (edu.colorTheme || 'blue')).toLowerCase().trim()">
+                                    <div class="date-pill long" [ngStyle]="getDatePillStyles(edu.colorTheme)">
                                         <i class="bi bi-calendar3 me-2"></i> {{ edu.session }}
                                     </div>
                                 </ng-container>
@@ -89,7 +92,7 @@
 
             <div class="row g-4">
                 <div [class]="trainingColClass + ' col-12'" *ngFor="let train of trainingList">
-                    <div class="card h-100 border-0 shadow training-card p-4 d-flex flex-column">
+                    <div class="card h-100 border-0 shadow training-card p-4">
                         <div class="d-flex align-items-center mb-3">
                             <div class="icon-box me-3" [style.background-color]="train.iconBg" [style.color]="train.iconColor">
                                 <i [class]="'bi ' + train.icon"></i>
