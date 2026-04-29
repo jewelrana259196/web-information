@@ -1,5 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 
+/* Import Bootstrap first so project can use utility classes throughout components */
+/* Keep the import path unresolved by the bundler so it remains in the final bundle
+    (browser will try to load it at runtime). */
+
 /* Global Animations */
 
 @import "@fortawesome/fontawesome-free/css/all.min.css";

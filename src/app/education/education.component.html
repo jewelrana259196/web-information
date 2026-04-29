@@ -17,10 +17,12 @@
 
                 <div class="timeline-items">
                     <article class="timeline-item" *ngFor="let edu of educationList; let i = index">
-                        <div class="timeline-row d-flex align-items-start w-100">
+                        <!-- use Bootstrap gap & margin utilities; keep original classes for theme hooks -->
+                        <div class="timeline-row d-flex align-items-start w-100 gap-3 mb-3">
                             <!-- Left side (card or pill depending on index) -->
                             <div class="side side-left">
-                                <ng-container *ngIf="i % 2 === 0">
+                                <!-- force MBA item to right: if degree contains 'MBA' treat as odd -->
+                                <ng-container *ngIf="(i % 2 === 0) && !(edu.degree && edu.degree.toLowerCase().includes('mba'))">
                                     <div class="timeline-content card shadow-sm p-4" [ngClass]="('theme-' + (edu.colorTheme || 'blue')).toLowerCase().trim()">
                                         <div class="d-flex align-items-start justify-content-between mb-2">
                                             <div>
@@ -38,8 +40,8 @@
                                     </div>
                                    
                                 </ng-container>
-                                <ng-container *ngIf="i % 2 === 1">
-                                    <div class="date-pill long" [ngClass]="('bg-' + (edu.colorTheme || 'blue')).toLowerCase().trim()">
+                                <ng-container *ngIf="(i % 2 === 1) || (edu.degree && edu.degree.toLowerCase().includes('mba'))">
+                                    <div class="date-pill lang " [ngClass]="('bg-' + (edu.colorTheme || 'blue')).toLowerCase().trim()">
                                         <i class="bi bi-calendar3 me-2"></i> {{ edu.session }}
                                     </div>
                                 </ng-container>
@@ -51,7 +53,7 @@
                                 <div class="timeline-dot" [ngClass]="('bg-' + (edu.colorTheme || 'blue')).toLowerCase().trim()" ></div>
                             </div>
 
-                            <!-- Right side (pill or card depending on index) -->
+                       
                             <div class="side side-right">
                                 <ng-container *ngIf="i % 2 === 1">
                                     <div class="timeline-content card shadow-sm p-4" [ngClass]="('theme-' + (edu.colorTheme || 'blue')).toLowerCase().trim()">
@@ -87,7 +89,7 @@
 
             <div class="row g-4">
                 <div [class]="trainingColClass + ' col-12'" *ngFor="let train of trainingList">
-                    <div class="card h-100 border-0 shadow training-card p-4">
+                    <div class="card h-100 border-0 shadow training-card p-4 d-flex flex-column">
                         <div class="d-flex align-items-center mb-3">
                             <div class="icon-box me-3" [style.background-color]="train.iconBg" [style.color]="train.iconColor">
                                 <i [class]="'bi ' + train.icon"></i>
