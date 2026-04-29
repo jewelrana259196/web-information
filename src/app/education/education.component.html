@@ -20,7 +20,7 @@
                         <!-- use Bootstrap gap & margin utilities; keep original classes for theme hooks -->
                         <div class="timeline-row d-flex align-items-start w-100 gap-3 mb-3">
                             <!-- Left side (card or pill depending on index) -->
-                            <div class="side side-left">
+                            <div>
                                 <ng-container *ngIf="i % 2 === 0">
                                     <div class="card shadow-sm p-4 timeline-content" [ngStyle]="getThemeStyles(edu.colorTheme)">
                                         <div class="d-flex align-items-start justify-content-between mb-2">
@@ -35,29 +35,26 @@
                                          <div class="tags-container mt-3">
                                             <span class="rounded-pill me-2 mb-1" *ngFor="let tag of edu.tags" [ngStyle]="getBadgeStyles(edu.colorTheme)">{{ tag }}</span>
                                         </div>
-                                        <!-- <div class="tags-container mt-3">
-                                            <span class="badge rounded-pill me-2 mb-1 tag-pill" [ngClass]="('badge-' + (edu.colorTheme || 'blue')).toLowerCase().trim()" *ngFor="let tag of edu.tags">{{ tag }}</span>
-                                        </div> -->
-                                        
                                     </div>
                                     
-                                   
-                                </ng-container>
-                                <ng-container *ngIf="i % 2 === 1">
-                                    <div class="date-pill long" [ngStyle]="getDatePillStyles(edu.colorTheme)">
+                                    <div style="width: 200px;" [ngStyle]="getDatePillStyles(edu.colorTheme)">
                                         <i class="bi bi-calendar3 me-2"></i> {{ edu.session }}
                                     </div>
                                 </ng-container>
+                                <!-- <ng-container *ngIf="i % 2 === 1">
+                                    <div style="width: 200px;" [ngStyle]="getDatePillStyles(edu.colorTheme)">
+                                        <i class="bi bi-calendar3 me-2"></i> {{ edu.session }}
+                                    </div>
+                                </ng-container> -->
                             </div>
 
                             <!-- Center: vertical line and dot -->
                             <div class="timeline-center d-flex flex-column align-items-center">
-                                <div class="timeline-line left"></div>
                                 <div class="timeline-dot" [ngStyle]="getDotStyle(edu.colorTheme)"></div>
                             </div>
 
                            
-                            <div class="side side-right">
+                            <div class="" style="margin-left: 650px;">
                                 <ng-container *ngIf="i % 2 === 1">
                                     <div class="card shadow-sm p-4 timeline-content" [ngStyle]="getThemeStyles(edu.colorTheme)">
                                         <div class="d-flex align-items-start justify-content-between mb-2">
@@ -73,12 +70,16 @@
                                             <span class="rounded-pill me-2 mb-1" *ngFor="let tag of edu.tags" [ngStyle]="getBadgeStyles(edu.colorTheme)">{{ tag }}</span>
                                         </div>
                                     </div>
-                                </ng-container>
-                                <ng-container *ngIf="i % 2 === 0">
-                                    <div class="date-pill long" [ngStyle]="getDatePillStyles(edu.colorTheme)">
+                                      <div style="width: 200px;"  [ngStyle]="getDatePillStyles(edu.colorTheme)">
                                         <i class="bi bi-calendar3 me-2"></i> {{ edu.session }}
                                     </div>
+                                
                                 </ng-container>
+                                <!-- <ng-container *ngIf="i % 2 === 0">
+                                    <div style="width: 200px;"  [ngStyle]="getDatePillStyles(edu.colorTheme)">
+                                        <i class="bi bi-calendar3 me-2"></i> {{ edu.session }}
+                                    </div>
+                                </ng-container> -->
                             </div>
                         </div>
                     </article>
